@@ -88,7 +88,7 @@ export default function ProfilePage() {
                   <strong className="text-white">Data Integrity:</strong> Menjamin akurasi posisi armada hingga margin error 0.1%.
                 </p>
               </li>
-              <li className="flex gap-4">
+              <li className="flex gap-5">
                 <span className="text-cyan-400 font-black text-[10px]">02.</span>
                 <p className="text-[10px] text-gray-500 uppercase tracking-widest leading-relaxed">
                   <strong className="text-white">Eco-Optimization:</strong> Mengurangi jejak karbon melalui rute pelayaran paling efisien.
