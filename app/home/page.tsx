@@ -33,7 +33,6 @@ export default function FleetMonitor() {
           <p className="text-[10px] text-gray-600 tracking-[0.3em] uppercase font-black">Navigation</p>
           <NavItem icon={<Activity size={18}/>} label="Fleet Monitor" active />
           
-          {/* Tombol Live Map otomatis menyambungkan ke /map  */}
           <div onClick={() => router.push('/map')} className="cursor-pointer">
             <NavItem icon={<Map size={18}/>} label="Live Map" />
           </div>
@@ -73,7 +72,6 @@ export default function FleetMonitor() {
             <VesselCard 
               key={ship.id} 
               ship={ship} 
-              // Klik tombol maximize di kartu juga bisa langsung ke map page
               onOpenMap={() => router.push('/map')} 
             />
           ))}

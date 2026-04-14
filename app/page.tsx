@@ -1,133 +1,152 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Globe, Zap, ShieldCheck, Database, Navigation, Monitor, ArrowRight, Anchor } from 'lucide-react';
+import { 
+  Globe, Zap, ShieldCheck, Database, Navigation, 
+  Monitor, ArrowRight, Anchor, Target, Building2, 
+  Server, ShieldAlert, Cpu, Info, Activity
+} from 'lucide-react';
 
 export default function ProfilePage() {
   return (
-    <div className="min-h-screen bg-[#050507] flex flex-col items-center justify-center p-6 relative overflow-hidden font-mono">
-      {/* Ambient Visual Effects */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 pointer-events-none"></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-purple-600/5 blur-[160px] pointer-events-none"></div>
+    <div className="min-h-screen bg-[#050507] text-gray-300 font-mono selection:bg-[#bc13fe]/30">
       
-      {/* Decorative Moving Grid */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-           style={{ backgroundImage: 'linear-gradient(#bc13fe 1px, transparent 1px), linear-gradient(90deg, #bc13fe 1px, transparent 1px)', backgroundSize: '50px 50px' }}>
-      </div>
+      <section className="min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden border-b border-gray-900">
 
-      <div className="border border-purple-900/30 bg-[#0a0a0c]/95 backdrop-blur-3xl p-8 md:p-14 max-w-6xl w-full relative shadow-[0_0_100px_rgba(0,0,0,0.8)] rounded-sm group">
-        
-        {/* Top Status Bar */}
-        <div className="flex justify-between items-center mb-12 border-b border-purple-900/20 pb-6">
-          <div className="flex items-center gap-3">
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-ping"></div>
-            <span className="text-[9px] text-gray-400 font-black uppercase tracking-[0.4em]">System Status: Operational</span>
-          </div>
-          <div className="hidden md:block text-[9px] text-gray-600 font-black uppercase tracking-[0.4em]">
-            Deployment: Terminal_UAJY_K10
-          </div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-purple-600/5 blur-[160px] pointer-events-none"></div>
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+             style={{ backgroundImage: 'linear-gradient(#bc13fe 1px, transparent 1px), linear-gradient(90deg, #bc13fe 1px, transparent 1px)', backgroundSize: '50px 50px' }}>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left Column: Branding & CTA */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-            <div className="relative w-56 h-28 mb-8 drop-shadow-[0_0_20px_rgba(188,19,254,0.4)] transition-transform duration-700 group-hover:scale-105">
-              <Image src="/logo.png" alt="PrimeLog Logo" fill className="object-contain" priority />
-            </div>
-            
-            <h1 className="text-4xl md:text-6xl font-black text-white tracking-[0.1em] mb-6 uppercase italic leading-none">
-              PRIME<span className="text-[#bc13fe]">LOG</span><br/>
-              <span className="text-3xl md:text-4xl">FLEET UNIT</span>
-            </h1>
-
-            <div className="h-1 w-20 bg-[#bc13fe] mb-8"></div>
-            
-            <p className="text-gray-400 text-xs md:text-sm leading-relaxed mb-10 font-mono max-w-md border-l-2 border-purple-900/50 pl-6">
-              Sistem manajemen armada laut mutakhir yang mengintegrasikan telemetri satelit dengan 
-              antarmuka visibilitas tinggi. Dioptimalkan untuk lingkungan Command Center 
-              guna mendukung kru dalam pengawasan operasional 24/7.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-              <Link 
-                href="/login" 
-                className="group flex items-center justify-center gap-3 px-12 py-5 bg-[#bc13fe] text-white font-black text-xs tracking-[0.3em] uppercase hover:bg-purple-700 transition-all shadow-[0_10px_40px_rgba(188,19,254,0.3)] relative overflow-hidden"
-              >
-                <span className="relative z-10">Sign In to Access</span>
-                <ArrowRight size={16} className="relative z-10 group-hover:translate-x-2 transition-transform" />
-                <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+        <div className="border border-purple-900/30 bg-[#0a0a0c]/90 backdrop-blur-3xl p-10 md:p-16 max-w-5xl w-full relative shadow-[0_0_100px_rgba(0,0,0,0.5)] rounded-sm">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            <div className="flex-1 text-center lg:text-left">
+              <div className="inline-block px-3 py-1 border border-[#bc13fe]/50 text-[#bc13fe] text-[9px] font-black uppercase tracking-[0.4em] mb-6">
+                Operational Status: Secure // 2026
+              </div>
+              <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-6 uppercase italic leading-none">
+                PRIME<span className="text-[#bc13fe]">LOG</span>
+              </h1>
+              <p className="text-gray-400 text-sm leading-relaxed mb-10 max-w-md italic border-l-2 border-purple-500 pl-4">
+                Advanced Maritime Intelligence & Fleet Telemetry. Membangun masa depan logistik laut dengan data presisi tinggi untuk operasional global.
+              </p>
+              <Link href="/login" className="inline-flex items-center gap-3 px-12 py-5 bg-[#bc13fe] text-white font-black text-[10px] tracking-[0.3em] uppercase hover:bg-purple-700 transition-all shadow-[0_0_30px_rgba(188,19,254,0.3)] group">
+                Initialise Terminal <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
               </Link>
             </div>
-          </div>
-
-          {/* Right Column: Informative Features */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative">
-            <div className="absolute inset-0 bg-purple-600/5 blur-3xl rounded-full"></div>
-            
-            <FeatureCard 
-              icon={<Navigation size={24} className="text-cyan-400" />} 
-              title="Real-time Tracking" 
-              desc="Visualisasi posisi armada di peta dunia dengan pembaruan koordinat periodik melalui satelit." 
-            />
-            <FeatureCard 
-              icon={<Database size={24} className="text-purple-500" />} 
-              title="Fleet Logs" 
-              desc="Audit log terpusat untuk memantau histori perjalanan dan konsumsi bahan bakar." 
-            />
-            <FeatureCard 
-              icon={<Monitor size={24} className="text-green-500" />} 
-              title="Dark-Tech UI" 
-              desc="Desain kontras tinggi yang dirancang khusus untuk mengurangi kelelahan mata kru." 
-            />
-            <FeatureCard 
-              icon={<Zap size={24} className="text-yellow-500" />} 
-              title="Smart Analytics" 
-              desc="Dashboard performa yang menyajikan grafik efisiensi operasional secara intuitif." 
-            />
+            {/* UKURAN GAMBAR/IKON DIPERBESAR (Size 340) */}
+            <div className="hidden lg:block relative opacity-20">
+               <Anchor size={340} className="text-[#bc13fe] animate-pulse" />
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* Bottom Decorative Bar */}
-        <div className="mt-16 pt-8 border-t border-purple-900/20 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex gap-8">
-            <div className="text-center">
-              <p className="text-white font-black text-lg italic tracking-widest">24/7</p>
-              <p className="text-[8px] text-gray-600 uppercase font-bold tracking-widest">Monitoring</p>
+      <section className="py-24 px-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+          <div>
+            <div className="flex items-center gap-4 mb-8">
+              <div className="p-2 bg-purple-500/10 border border-purple-500/30">
+                <Info className="text-[#bc13fe]" size={20} />
+              </div>
+              <h2 className="text-2xl font-black text-white uppercase tracking-[0.2em] italic">About PrimeLog</h2>
             </div>
-            <div className="text-center">
-              <p className="text-white font-black text-lg italic tracking-widest">100%</p>
-              <p className="text-[8px] text-gray-600 uppercase font-bold tracking-widest">Secure Link</p>
-            </div>
-          </div>
-          <div className="text-right flex items-center gap-4 bg-white/5 px-4 py-2 rounded-sm border border-white/5">
-            <Anchor size={16} className="text-[#bc13fe]" />
-            <p className="text-[9px] text-gray-400 font-bold uppercase tracking-widest">
-              Maritime Standard Protocol Applied
+            <p className="text-gray-400 leading-relaxed mb-6 italic">
+              Didirikan oleh inisiatif teknis Kelompok 10 UAJY, PrimeLog Fleet adalah sistem kontrol armada terpadu yang dirancang untuk menjawab tantangan navigasi modern.
+            </p>
+            <p className="text-gray-400 leading-relaxed">
+              Kami menggabungkan algoritma pemrosesan data satelit dengan antarmuka visibilitas tinggi untuk memberikan kontrol penuh kepada operator darat. Fokus kami adalah akurasi, kecepatan data, dan keamanan siber maritim.
             </p>
           </div>
+          
+          <div className="grid grid-cols-1 gap-4">
+             <InfoCard icon={<ShieldCheck size={20} className="text-green-500" />} title="Military Grade" desc="Protokol enkripsi 256-bit AES untuk setiap transmisi data." />
+             <InfoCard icon={<Zap size={20} className="text-yellow-500" />} title="Real-time Link" desc="Latensi rendah dengan sinkronisasi satelit konstan." />
+             <InfoCard icon={<Database size={20} className="text-cyan-500" />} title="Fleet Logging" desc="Pengarsipan histori rute dan konsumsi BBM otomatis." />
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* Footer Info */}
-      <div className="mt-12 text-[9px] text-gray-700 tracking-[0.5em] font-bold uppercase text-center leading-loose">
-        <p>© 2026 PrimeLog Maritime Intelligence System</p>
-        <p className="opacity-60 italic">FST - Universitas Atma Jaya Yogyakarta - Kelompok 10</p>
-      </div>
+      <section className="py-24 bg-[#07070a] border-y border-gray-900 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 blur-[100px] pointer-events-none"></div>
+        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+          
+          <div className="p-10 border border-purple-900/20 bg-gradient-to-br from-purple-900/5 to-transparent relative group">
+            <Target className="text-[#bc13fe] mb-8" size={40} />
+            <h2 className="text-2xl font-black text-white uppercase mb-6 tracking-[0.2em] italic">Strategic Vision</h2>
+            <p className="text-gray-400 text-sm leading-loose italic">
+              "Menjadi standar emas global dalam ekosistem intelijen maritim digital, mewujudkan transparansi data laut yang mutlak untuk mendukung terciptanya jalur perdagangan dunia yang lebih cerdas pada tahun 2030."
+            </p>
+          </div>
+
+          <div className="p-10 border border-gray-800 bg-[#0a0a0c] relative group">
+            <Activity className="text-cyan-400 mb-8" size={40} />
+            <h2 className="text-2xl font-black text-white uppercase mb-6 tracking-[0.2em] italic">Our Mission</h2>
+            <ul className="space-y-6">
+              <li className="flex gap-4">
+                <span className="text-cyan-400 font-black text-[10px]">01.</span>
+                <p className="text-[10px] text-gray-500 uppercase tracking-widest leading-relaxed">
+                  <strong className="text-white">Data Integrity:</strong> Menjamin akurasi posisi armada hingga margin error 0.1%.
+                </p>
+              </li>
+              <li className="flex gap-4">
+                <span className="text-cyan-400 font-black text-[10px]">02.</span>
+                <p className="text-[10px] text-gray-500 uppercase tracking-widest leading-relaxed">
+                  <strong className="text-white">Eco-Optimization:</strong> Mengurangi jejak karbon melalui rute pelayaran paling efisien.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <section className="py-24 px-6 max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <Server className="mx-auto text-[#bc13fe] mb-4" size={32} />
+          <h2 className="text-2xl font-black text-white uppercase tracking-[0.3em] italic">Global Infrastructure</h2>
+          <p className="text-[9px] text-gray-600 mt-2 uppercase tracking-widest font-bold italic">Tier-4 Network Backbone</p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="p-8 border border-gray-900 bg-[#08080a] hover:border-purple-500/50 transition-all">
+            <h4 className="text-white font-black text-xs uppercase mb-3 tracking-widest italic">Data Centers</h4>
+            <p className="text-[10px] text-gray-500 leading-relaxed">Distribusi server di 12 zona maritim internasional guna menjamin ketersediaan akses terminal 24/7.</p>
+          </div>
+          <div className="p-8 border border-gray-900 bg-[#08080a] hover:border-purple-500/50 transition-all">
+            <h4 className="text-white font-black text-xs uppercase mb-3 tracking-widest italic">Compliance</h4>
+            <p className="text-[10px] text-gray-500 leading-relaxed">Terakreditasi IMO (International Maritime Organization) dan standar ISO 27001 untuk keamanan informasi.</p>
+          </div>
+          <div className="p-8 border border-gray-900 bg-[#08080a] hover:border-purple-500/50 transition-all">
+            <h4 className="text-white font-black text-xs uppercase mb-3 tracking-widest italic">Partners</h4>
+            <p className="text-[10px] text-gray-500 leading-relaxed">Bekerja sama dengan FST UAJY dan aliansi logistik global untuk pengembangan teknologi berkelanjutan.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer className="py-12 border-t border-gray-900 text-center bg-[#07070a]">
+        <div className="flex justify-center gap-8 mb-6 opacity-30">
+           <Building2 size={16} />
+           <Monitor size={16} />
+           <ShieldAlert size={16} />
+        </div>
+        <p className="text-[10px] text-gray-700 tracking-[0.5em] font-bold uppercase mb-2">
+          © 2026 PrimeLog Fleet // Kelompok 10 SI UAJY
+        </p>
+        <p className="text-[8px] text-gray-800 uppercase tracking-widest italic">Advanced Vessel Tracking Interface v2.0.26</p>
+      </footer>
+
     </div>
   );
 }
 
-function FeatureCard({ icon, title, desc }: { icon: React.ReactNode, title: string, desc: string }) {
+function InfoCard({ icon, title, desc }: { icon: React.ReactNode, title: string, desc: string }) {
   return (
-    <div className="bg-black/40 border border-gray-800/50 p-6 hover:border-[#bc13fe]/40 transition-all group relative z-10 backdrop-blur-sm">
-      <div className="mb-4 p-3 bg-white/5 w-fit rounded-sm group-hover:scale-110 transition-transform">
-        {icon}
+    <div className="bg-[#0a0a0c] border border-gray-800 p-6 flex gap-6 items-start hover:border-[#bc13fe]/30 transition-all group">
+      <div className="mt-1 group-hover:scale-110 transition-transform">{icon}</div>
+      <div>
+        <h4 className="text-white text-[11px] font-black uppercase tracking-widest mb-1 italic">{title}</h4>
+        <p className="text-[10px] text-gray-600 leading-relaxed font-mono italic">{desc}</p>
       </div>
-      <h3 className="text-white text-[11px] font-black uppercase tracking-[0.2em] mb-3 group-hover:text-[#bc13fe] transition-colors italic">
-        {title}
-      </h3>
-      <p className="text-[10px] text-gray-500 leading-relaxed font-mono italic">
-        {desc}
-      </p>
     </div>
   );
 }
